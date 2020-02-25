@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to my skills<%=  %></p>
+    <ul>
+      <% skills.forEach(function (skill, index) { %>
+        
+      <li><%= skill %>
+        <form action="/skills/<%= index %>?_method=DELETE"
+          class="delete-form" method="POST">
+          <button type="submit">X</button>
+        </form>
+      </li>
+      <% }); %>
+    </ul>
+
+    <a href="/skills/new">Add New Skill</a>
+  </body>
+</html>
